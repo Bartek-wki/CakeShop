@@ -3,7 +3,8 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 
-//const postsRoutes = require('./routes/name.routes');
+const cakesRoutes = require('./routes/cakes.routes');
+const pastriesRoutes = require('./routes/pastries.routes')
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '/client/public')));*/
 
 /* API ENDPOINTS */
-//app.use('/api', nameRoutes);
+app.use('/api', pastriesRoutes);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {
