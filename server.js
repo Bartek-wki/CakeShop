@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, '/client/public')));*/
 
 /* API ENDPOINTS */
 app.use('/api', pastriesRoutes);
+app.use('/api', cakesRoutes);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {
