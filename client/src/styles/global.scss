@@ -1,0 +1,50 @@
+@import './settings.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $color-text;
+  background: $color-bg-primary;
+  font-family: $font-text;
+  font-size: ($base-size * 1.3);
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  overflow-y: scroll;
+  min-height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+a, li {
+  transition: $transition;
+}
+
+a {
+  color: $color-primary
+}
+
+a:hover {
+  color: $color-secondary;
+}
+
+.container {
+  margin: 1rem auto;
+  min-height: calc(100vh - 14rem);
+}
+
+@import './typography.scss';

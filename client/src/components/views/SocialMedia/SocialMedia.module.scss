@@ -1,0 +1,37 @@
+@import '../../../styles/settings.scss';
+
+.container {
+  height: 60px;
+  background-color: $color-primary;
+  position: relative;
+
+  &::after {
+    content: '';
+    border-bottom: 3px solid $color-secondary;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+  }
+
+  .icons {
+    display: flex;
+
+    li {
+      margin: 0 10px;
+
+      a {
+        color: $color-text-bright;
+        font-size: ($base-size * 2.5);
+      }
+    }
+    li:hover a {
+      color: $color-secondary;
+      transform: scale(2, 0.5);
+    }
+
+    li:hover {
+      transform: scale(1.2, 1.2);
+    }
+  }
+}

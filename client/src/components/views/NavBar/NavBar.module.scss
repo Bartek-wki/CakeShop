@@ -1,0 +1,14 @@
+@import '../../../styles/settings.scss';
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  font-size: ($base-size * 1.8);
+  li {
+    margin: 0 25px;
+  }
+}
+
+.selected {
+  color: $color-secondary;
+}
