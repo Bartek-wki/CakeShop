@@ -1,8 +1,17 @@
 @import '../../../styles/settings.scss';
 
-.logoContainer {
-  margin: 30px 0 15px 0;
-  height: 100px;
-  display: flex;
-  justify-content: center;
+.headerContainer {
+  position: fixed;
+  z-index: 15;
+  width: 100%;
+  background-color: white;
+
+  .logoContainer {
+    margin: 15px 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+  }
 }
+
+

@@ -6,7 +6,7 @@ import SocialMedia from '../SocialMedia/SocialMedia';
 import Navbar from '../NavBar/NavBar';
 
 const Header = () => (
-  <div>
+  <div className={styles.headerContainer}>
     <SocialMedia />
     <div className={styles.logoContainer}>
       <img alt='' src={`${process.env.PUBLIC_URL}/images/logo.jpg`} />
