@@ -1,6 +1,8 @@
 import React from 'react';
 
 import CarouselComponent from '../../features/CarouselComponent/CarouselComponent';
+import BestSellers from '../../features/BestSellers/BestSellers';
+import Offers from '../../features/Offers/Offers';
 
 const Home = () => (
   <div>
@@ -11,6 +13,8 @@ const Home = () => (
       title={'Sweet Delights'}
       describe={'bakery - cakes and pastries to order'}
     />
+    <BestSellers />
+    <Offers />
   </div>
 );
 

@@ -1,0 +1,104 @@
+@import '../../../styles/settings.scss';
+
+.productContainer {
+  width: calc((100vw - 2rem)/5 - 40px);
+  margin: 0 20px 20px 20px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 50px;
+  margin-top: 25px;
+  box-shadow: 1px 1px 5px rgb(0,0,0,0.3);
+
+  .imageWrapper {
+    height: 200px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .textWrapper {
+    //height: 100px;
+    height: 150px;
+    background-color: $color-primary;
+    color: $color-text-bright;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: ($base-size * 1.2);
+    padding-top: 20px;
+    position: relative;
+
+    P:nth-child(2) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 40px;
+      height: 30px;
+
+      &::before {
+        content: '';
+        width: 30px;
+        border-bottom: 2px solid $color-text-bright;
+        position: absolute;
+        top:15px;
+        left: 60px;
+      }
+
+      &::after {
+        content: '';
+        width: 30px;
+        border-bottom: 2px solid $color-text-bright;
+        position: absolute;
+        top: 15px;
+        right: 60px;
+      }
+    }
+  }
+  .overlay {
+    position: absolute;
+    width: 0;
+    height: 75px;
+    background-color: rgba($color: $color-bg-primary, $alpha: 0.9);
+    top: 20%;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+
+    p {
+      position: absolute;
+      width: 200px;
+      z-index: 15;
+      color: $color-secondary;
+      margin: auto;
+      transition: $transition;
+      display: none;
+      font-size: ($base-size * 1.7);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+  }
+
+  &:hover .overlay {
+    width: 100%;
+    justify-content: center;
+    z-index: 5;
+
+    p {
+      display: block;
+    }
+  }
+
+  .starContainer {
+    display: flex;
+    color: $color-star;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+  }
+
+}

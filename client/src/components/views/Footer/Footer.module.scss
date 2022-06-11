@@ -1,0 +1,11 @@
+@import '../../../styles/settings.scss';
+
+.footerContainer {
+  background-color: $color-primary;
+  height: 60px;
+  margin-top: 100px;
+  color: $color-text-bright;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

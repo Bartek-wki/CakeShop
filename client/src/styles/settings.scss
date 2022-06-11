@@ -1,8 +1,11 @@
 $color-primary: #452629;
 $color-secondary: #de127a;
-$color-bg-primary: #fff;
+$color-secondary-opacity: rgb(222, 18, 123, 0.8);
 
-$color-text: #452629;
+$color-bg-primary: #fff;
+$color-star: rgb(218, 165, 32);
+
+$color-text: $color-primary;
 $color-text-dark: #1b1b1b;
 $color-text-light: #1d1d1f66;
 $color-text-bright: #fff;
