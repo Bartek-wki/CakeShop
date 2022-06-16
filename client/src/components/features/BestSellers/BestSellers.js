@@ -5,6 +5,7 @@ import { loadTopCakesRequest, getTopCakes } from '../../../redux/cakesRedux';
 import { loadTopPastriesRequest, getTopPastries } from '../../../redux/pastriesRedux';
 
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Ribbon from '../../common/Ribbon/Ribbon';
 
 import styles from './BestSellers.module.scss';
 
@@ -13,7 +14,6 @@ const BestSellers = () => {
 
   const topCakes = useSelector(state => getTopCakes(state));
   const topPastries = useSelector(state => getTopPastries(state));
-  console.log(topCakes, topPastries);
 
   useEffect(() => {
     dispatch(loadTopCakesRequest());
@@ -22,15 +22,11 @@ const BestSellers = () => {
 
   return (
     <div className={styles.bestSellersContainer + ' container'}>
-      <div className={styles.ribbon}>
-        <p>TOP CAKES</p>
-      </div>
+      <Ribbon text={'TOP CAKES'} />
       <div className={styles.topCakesContainer}>
         {topCakes.map(cake => (<ProductBox key={cake._id} {...cake} mainCategory={ 'cakes' }/> ))}
       </div>
-      <div className={styles.ribbon}>
-        <p>TOP PASTRIES</p>
-      </div>
+      <Ribbon text={'TOP PASTRIES'} />
       <div className={styles.topPastriesContainer}>
         {topPastries.map(pastry => (<ProductBox key={pastry._id} {...pastry} mainCategory={'pastries'} />))}
       </div>

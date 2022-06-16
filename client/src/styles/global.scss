@@ -50,4 +50,7 @@ p {
   margin: 1rem;
 }
 
+.active {
+  color: $color-secondary;
+}
 @import './typography.scss';

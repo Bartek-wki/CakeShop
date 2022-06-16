@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import MainLayout from './components/views/MainLayout/MainLayout';
 import Home from './components/pages/Home/Home';
-import Cakes from './components/pages/Cakes/Cakes';
-import Pastries from './components/pages/Pastries/Pastries';
+import Cakes from './components/features/Cakes/Cakes';
+import Pastries from './components/features/Pastries/Pastries';
 import About from './components/pages/About/About';
 import NotFound from './components/pages/NotFound/NotFound';
 

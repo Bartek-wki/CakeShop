@@ -1,0 +1,53 @@
+@import '../../../styles/settings.scss';
+
+.filterContainer {
+    background-color: $color-bg-primary;
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 30%);
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 40px 0;
+    //position: sticky; top: 250px;
+    position: relative;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 50px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      border-bottom: 2px solid $color-primary;
+      top: 55px;
+      left: 0;
+    }
+
+    p {
+      font-size: ($base-size * 2);
+      letter-spacing: 2px;
+      width: 100%;
+    }
+
+  .list {
+    padding: 0;
+
+    li {
+      font-size: ($base-size * 1.6);
+      margin: 15px 0;
+
+
+      button {
+        border: none;
+        background-color: $color-bg-primary;
+        display: block;
+        letter-spacing: 1px;
+        cursor: pointer;
+
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+.layout {
+  display: flex;
+
+  .leftWrapper {
+    flex: 1;
+  }
+
+  .rightWrapper {
+    flex: 3;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
