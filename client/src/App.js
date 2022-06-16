@@ -6,6 +6,7 @@ import Home from './components/pages/Home/Home';
 import Cakes from './components/features/Cakes/Cakes';
 import Pastries from './components/features/Pastries/Pastries';
 import About from './components/pages/About/About';
+import SingleProduct from './components/features/SingleProduct/SingleProduct';
 import NotFound from './components/pages/NotFound/NotFound';
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cakes' element={<Cakes />} />
+        <Route path='/:product/:id' element={<SingleProduct />} />
         <Route path='/pastries' element={<Pastries />} />
         <Route path='/about' element={<About />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
     </MainLayout>
   );

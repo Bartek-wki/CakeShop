@@ -7,7 +7,7 @@
     position: absolute;
     z-index: 10;
     color: $color-text-bright;
-    top: calc(40vh + 95px);
+    top: calc(40vh - 95px);
     right: 0;
     left: 0;
     text-align: center;
@@ -28,10 +28,9 @@
   }
 
   .slideWrapper {
-    height: 100vh;
+    height: calc(100vh - 190px);
     min-height: 768px;
     position: relative;
-    top: 190px;
 
     img {
       object-fit: cover;

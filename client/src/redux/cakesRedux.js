@@ -4,6 +4,8 @@ import { API_URL } from '../config';
 /* SELECTORS */
 export const getTopCakes = ({ cakes }) => cakes.topCakes;
 export const getAllCakes = ({ cakes }) => cakes.allCakes;
+export const getSingleCake = ({ cakes }) => cakes.singleCake;
+
 /* ACTIONS */
 
 //action name creator
@@ -16,6 +18,7 @@ const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 
 const LOAD_TOP_CAKES = createActionName('LOAD_TOP_CAKES');
 const LOAD_ALL_CAKES = createActionName('LOAD_ALL_CAKES');
+const LOAD_SINGLE_CAKE = createActionName('LOAD_SINGLE_CAKE');
 
 export const startRequest = payload => ({ payload, type: START_REQUEST });
 export const endRequest = payload => ({ payload, type: END_REQUEST });
@@ -23,6 +26,7 @@ export const errorRequest = payload => ({ payload, type: ERROR_REQUEST });
 
 export const loadTopCakes = payload => ({ payload, type: LOAD_TOP_CAKES });
 export const loadAllCakes = payload => ({ payload, type: LOAD_ALL_CAKES });
+export const loadSingleCake = payload => ({ payload, type: LOAD_SINGLE_CAKE });
 
 /* THUNKS */
 export const loadTopCakesRequest = () => {
@@ -53,6 +57,20 @@ export const loadAllCakesRequest = () => {
   };
 };
 
+export const loadSingleCakeRequest = _id => {
+  return async dispatch => {
+    dispatch(startRequest({ name: LOAD_SINGLE_CAKE }));
+    try {
+      let res = await axios.get(`${API_URL}/cakes/${_id}`);
+      dispatch(loadSingleCake(res.data));
+      dispatch(endRequest({ name: LOAD_SINGLE_CAKE }));
+    }
+    catch (error) {
+      dispatch(errorRequest({ name: LOAD_SINGLE_CAKE, error: error.message }));
+    }
+  };
+};
+
 /* INITIAL STATE */
 const initialState = {
   allCakes: [],
@@ -74,6 +92,8 @@ export default function reducer(statePart = initialState, action = {}) {
       return { ...statePart, topCakes: [...action.payload] };
     case LOAD_ALL_CAKES:
       return { ...statePart, allCakes: [...action.payload] };
+    case LOAD_SINGLE_CAKE:
+      return { ...statePart, singleCake: action.payload };
     default:
       return statePart;
   }

@@ -1,17 +1,23 @@
 @import '../../../styles/settings.scss';
 
-.headerContainer {
-  position: fixed;
-  z-index: 100;
-  width: 100%;
-  background-color: white;
+.header {
+  position: relative;
+  height: 190px;
 
-  .logoContainer {
-    margin: 15px 0;
-    height: 50px;
-    display: flex;
-    justify-content: center;
+  .headerContainer {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background-color: white;
+
+    .logoContainer {
+      margin: 15px 0;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
+
 
 

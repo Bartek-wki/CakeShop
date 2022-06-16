@@ -1,0 +1,31 @@
+@import '../../../styles/settings.scss';
+
+.product {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .productContainer {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+
+    .descriptionContainer {
+      flex: 1;
+
+      .textContainer {
+        margin-top: 25px;
+
+        p:first-child {
+          font-size: ($base-size * 1.5);
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    .formContainer {
+      flex: 1;
+    }
+  }
+}

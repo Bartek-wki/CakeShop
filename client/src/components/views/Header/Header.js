@@ -6,13 +6,16 @@ import SocialMedia from '../SocialMedia/SocialMedia';
 import Navbar from '../NavBar/NavBar';
 
 const Header = () => (
-  <div className={styles.headerContainer}>
-    <SocialMedia />
-    <div className={styles.logoContainer}>
-      <img alt='' src={`${process.env.PUBLIC_URL}/images/logo.jpg`} />
+  <div className={styles.header}>
+    <div className={styles.headerContainer}>
+      <SocialMedia />
+      <div className={styles.logoContainer}>
+        <img alt='' src={`${process.env.PUBLIC_URL}/images/logo.jpg`} />
+      </div>
+      <Navbar />
     </div>
-    <Navbar />
   </div>
+
 );
 
 export default Header;
