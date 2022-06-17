@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -12,6 +12,7 @@ const SingleProduct = () => {
   const { id, product } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [cartData, setCartData] = useState({});
 
   useEffect(() => {
     if (product === 'cakes') {
@@ -31,9 +32,26 @@ const SingleProduct = () => {
     }
   });
 
+  useEffect(() => {
+    if (productData.length !== 0) {
+      setCartData({
+        name: productData.name,
+        taste: productData.taste,
+        price: productData.basePrice,
+        image: productData.images[0],
+        size: 'small',
+        count: null,
+        productColor: 'as shown',
+        decorationColor: 'as shown',
+        inscription: '',
+      });
+    }
+  },[productData]);
+
+
   return (
     <>
-      { productData.length !== 0 && <SingleProductPage {...productData} product={product} /> }
+      { productData.length !== 0 && <SingleProductPage {...productData} product={product} cartData={cartData} setCartData={setCartData} /> }
     </>
   );
 };

@@ -13,6 +13,7 @@
 
     .descriptionContainer {
       flex: 1;
+      margin-top: 25px;
 
       .textContainer {
         margin-top: 25px;
@@ -26,6 +27,13 @@
 
     .formContainer {
       flex: 1;
+      margin-left: 50px;
+
+      & > p {
+        font-size: ($base-size * 2);
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
     }
   }
 }
