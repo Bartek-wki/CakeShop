@@ -40,7 +40,7 @@ const SingleProduct = () => {
         price: productData.basePrice,
         image: productData.images[0],
         size: 'small',
-        count: null,
+        quantity: 1,
         productColor: 'as shown',
         decorationColor: 'as shown',
         inscription: '',

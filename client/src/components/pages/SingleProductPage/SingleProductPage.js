@@ -5,7 +5,7 @@ import styles from './SingleProductPage.module.scss';
 import Gallery from '../../features/Gallery/Gallery';
 import StandardCakeForm from '../../features/StandardCakeForm/StandardCakeForm';
 
-const SingleProductPage = ({images, product, text, name, cartData, setCartData}) => (
+const SingleProductPage = ({images, product, text, name, cartData, setCartData, basePrice}) => (
   <div className={styles.product}>
     <div className={styles.productContainer}>
       <div className={styles.descriptionContainer}>
@@ -17,7 +17,7 @@ const SingleProductPage = ({images, product, text, name, cartData, setCartData})
       </div>
       <div className={styles.formContainer}>
         <p>{name}</p>
-        <StandardCakeForm cartData={cartData} setCartData={setCartData} />
+        <StandardCakeForm cartData={cartData} setCartData={setCartData} basePrice={basePrice} />
       </div>
     </div>
   </div>
@@ -30,6 +30,7 @@ SingleProductPage.propTypes = {
   name: PropTypes.string,
   cartData: PropTypes.object,
   setCartData: PropTypes.func,
+  basePrice: PropTypes.number,
 };
 
 export default SingleProductPage;
