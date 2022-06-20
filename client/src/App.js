@@ -7,6 +7,7 @@ import Cakes from './components/features/Cakes/Cakes';
 import Pastries from './components/features/Pastries/Pastries';
 import About from './components/pages/About/About';
 import SingleProduct from './components/features/SingleProduct/SingleProduct';
+import Cart from './components/features/Cart/Cart';
 import NotFound from './components/pages/NotFound/NotFound';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/:product/:id' element={<SingleProduct />} />
         <Route path='/pastries' element={<Pastries />} />
         <Route path='/about' element={<About />} />
+        <Route path='/cart' element={<Cart />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
     </MainLayout>

@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 /* REDUCERS */
 import cakes from './cakesRedux';
 import pastries from './pastriesRedux';
+import orders from './ordersRedux';
 
 /* COMBINE REDUCERS */
 const rootReducer = combineReducers({
   cakes,
   pastries,
+  orders,
 });
 
 const store = createStore(

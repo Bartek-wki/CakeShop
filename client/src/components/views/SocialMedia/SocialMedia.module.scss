@@ -33,5 +33,12 @@
     li:hover {
       transform: scale(1.2, 1.2);
     }
+
+    li:last-child{
+      position: absolute;
+      right: 5px;
+      top: 0;
+      bottom: 0;
+    }
   }
 }

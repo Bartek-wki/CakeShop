@@ -13,6 +13,7 @@ const SingleProduct = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [cartData, setCartData] = useState({});
+  const [confirm, setConfirm] = useState(false);
 
   useEffect(() => {
     if (product === 'cakes') {
@@ -36,22 +37,24 @@ const SingleProduct = () => {
     if (productData.length !== 0) {
       setCartData({
         name: productData.name,
+        product: product,
+        category: productData.category,
         taste: productData.taste,
         price: productData.basePrice,
         image: productData.images[0],
-        size: 'small',
+        size: '',
         quantity: 1,
-        productColor: 'as shown',
-        decorationColor: 'as shown',
+        productColor: 'As shown',
+        decorationColor: 'As shown',
         inscription: '',
       });
     }
-  },[productData]);
+  },[productData, product]);
 
 
   return (
     <>
-      { productData.length !== 0 && <SingleProductPage {...productData} product={product} cartData={cartData} setCartData={setCartData} /> }
+      { productData.length !== 0 && <SingleProductPage {...productData} cartData={cartData} setCartData={setCartData} confirm={confirm} setConfirm={setConfirm} /> }
     </>
   );
 };

@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { API_URL } from '../config';
+import initialState from './pastriesInitialState';
 
 /* SELECTORS */
 export const getTopPastries = ({ pastries }) => pastries.topPastries;
 export const getAllPastries = ({ pastries }) => pastries.allPastries;
 export const getSinglePastry = ({ pastries }) => pastries.singlePastry;
+export const getPastriesSizeDescription = ({ pastries }) => pastries.sizeDescription;
 
 /* ACTIONS */
 
@@ -70,14 +72,6 @@ export const loadSinglePastryRequest = _id => {
       dispatch(errorRequest({ name: LOAD_SINGLE_PASTRY, error: error.message }));
     }
   };
-};
-
-/* INITIAL STATE */
-const initialState = {
-  allPastries: [],
-  topPastries: [],
-  singlePastry: [],
-  requests: [],
 };
 
 /* REDUCER */

@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { API_URL } from '../config';
+import initialState from './cakesInitialState';
 
 /* SELECTORS */
 export const getTopCakes = ({ cakes }) => cakes.topCakes;
 export const getAllCakes = ({ cakes }) => cakes.allCakes;
 export const getSingleCake = ({ cakes }) => cakes.singleCake;
+export const getCakesSizeDescription = ({ cakes }) => cakes.sizeDescription;
+export const getCakesTastesToChoose = ({ cakes }) => cakes.tastesToChoose;
 
 /* ACTIONS */
 
@@ -69,14 +72,6 @@ export const loadSingleCakeRequest = _id => {
       dispatch(errorRequest({ name: LOAD_SINGLE_CAKE, error: error.message }));
     }
   };
-};
-
-/* INITIAL STATE */
-const initialState = {
-  allCakes: [],
-  topCakes: [],
-  singleCake: [],
-  requests: [],
 };
 
 /* REDUCER */

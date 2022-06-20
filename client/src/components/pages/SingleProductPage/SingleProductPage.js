@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 
 import styles from './SingleProductPage.module.scss';
 import Gallery from '../../features/Gallery/Gallery';
-import StandardCakeForm from '../../features/StandardCakeForm/StandardCakeForm';
+import ProductForm from '../../features/ProductForm/ProductForm';
 
-const SingleProductPage = ({images, product, text, name, cartData, setCartData, basePrice}) => (
+const SingleProductPage = ({images, text, name, cartData, setCartData, basePrice, confirm, setConfirm}) => (
   <div className={styles.product}>
+    {confirm && <div className={styles.confirm}>
+      <p>Product was added to your cart</p>
+      <button onClick={e => setConfirm(false)}>X</button>
+    </div>}
     <div className={styles.productContainer}>
       <div className={styles.descriptionContainer}>
-        <Gallery images={images} product={product} />
+        <Gallery images={images} product={cartData.product} />
         <div className={styles.textContainer}>
           <p>Description</p>
           <p>{text}</p>
@@ -17,7 +21,7 @@ const SingleProductPage = ({images, product, text, name, cartData, setCartData, 
       </div>
       <div className={styles.formContainer}>
         <p>{name}</p>
-        <StandardCakeForm cartData={cartData} setCartData={setCartData} basePrice={basePrice} />
+        <ProductForm cartData={cartData} setCartData={setCartData} basePrice={basePrice} setConfirm={setConfirm} />
       </div>
     </div>
   </div>
@@ -25,12 +29,13 @@ const SingleProductPage = ({images, product, text, name, cartData, setCartData, 
 
 SingleProductPage.propTypes = {
   images: PropTypes.array,
-  product: PropTypes.string,
   text: PropTypes.string,
   name: PropTypes.string,
   cartData: PropTypes.object,
   setCartData: PropTypes.func,
   basePrice: PropTypes.number,
+  confirm: PropTypes.bool,
+  setConfirm: PropTypes.func,
 };
 
 export default SingleProductPage;
