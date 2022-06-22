@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 const cakesRoutes = require('./routes/cakes.routes');
 const pastriesRoutes = require('./routes/pastries.routes')
+const ordersRoutes = require('./routes/orders.routes')
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, '/client/public')));*/
 /* API ENDPOINTS */
 app.use('/api', pastriesRoutes);
 app.use('/api', cakesRoutes);
+app.use('/api', ordersRoutes);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {

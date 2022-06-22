@@ -8,6 +8,7 @@ import { addProductToCart } from '../../../redux/ordersRedux';
 
 import Select from '../../common/Select/Select';
 import Input from '../../common/Input/Input';
+import Textarea from '../../common/Textarea/Textarea';
 import FormSumup from '../FormSumup/FormSumup';
 
 import styles from './ProductForm.module.scss';
@@ -53,8 +54,12 @@ const ProductForm = ({ cartData, setCartData, basePrice, setConfirm }) => {
     setCartData(values => ({ ...values, decorationColor: decorationColor }));
   };
 
-  const enterInscription = inscription => {
+  const addInscription = inscription => {
     setCartData(values => ({ ...values, inscription: inscription }));
+  };
+
+  const addComments = comments => {
+    setCartData(values => ({ ...values, comments: comments }));
   };
 
   useEffect(() => {
@@ -67,10 +72,10 @@ const ProductForm = ({ cartData, setCartData, basePrice, setConfirm }) => {
   }, [cartData.category]);
 
   useEffect(() => {
-    if (cartData.size === 'small' || cartData.size === 'two tiers') { setCartData(values => ({ ...values, price: basePrice * cartData.quantity })); }
-    else if (cartData.size === 'medium' || cartData.size === 'three tiers') { setCartData(values => ({ ...values, price: (Math.round((basePrice * 1.25)) * cartData.quantity)})); }
-    else if (cartData.size === 'large' || cartData.size === 'four tiers') { setCartData(values => ({ ...values, price: (Math.round((basePrice * 1.5)) * cartData.quantity) })); }
-    else if (cartData.size === 'five tiers') { setCartData(values => ({ ...values, price: (Math.round((basePrice * 2)) * cartData.quantity)})); }
+    if (cartData.size === 'small' || cartData.size === 'two tiers') { setCartData(values => ({ ...values, price: basePrice, totalPrice: basePrice * cartData.quantity })); }
+    else if (cartData.size === 'medium' || cartData.size === 'three tiers') { setCartData(values => ({ ...values, price: Math.round((basePrice * 1.25)), totalPrice: (Math.round((basePrice * 1.25)) * cartData.quantity)})); }
+    else if (cartData.size === 'large' || cartData.size === 'four tiers') { setCartData(values => ({ ...values, price: Math.round((basePrice * 1.5)), totalPrice: (Math.round((basePrice * 1.5)) * cartData.quantity) })); }
+    else if (cartData.size === 'five tiers') { setCartData(values => ({ ...values, price: Math.round((basePrice * 2)), totalPrice: (Math.round((basePrice * 2)) * cartData.quantity)})); }
   }, [cartData.size, basePrice, setCartData, cartData.quantity]);
 
   const handleSubmit = event => {
@@ -90,8 +95,9 @@ const ProductForm = ({ cartData, setCartData, basePrice, setConfirm }) => {
       {(cartData.category === 'wedding cakes' || cartData.category === 'baby cakes' || cartData.category === 'communion cakes') && <Select value={cartData.taste[0]} changeValue={selectTaste} options={tastesToChoose} name='Choose taste:' />}
       {(cartData.category === 'wedding cakes' || cartData.category === 'baby cakes' || cartData.category === 'communion cakes') && <Input value={cartData.productColor} changeValue={changeProductColor} name={'Cake color'} />}
       {(cartData.category === 'wedding cakes' || cartData.category === 'baby cakes' || cartData.category === 'communion cakes') && <Input value={cartData.decorationColor} changeValue={changeDecorationColor} name={'Decoration color'} />}
-      {(cartData.category === 'baby cakes' || cartData.category === 'communion cakes') && <Input value={cartData.inscription} changeValue={enterInscription} name={'Inscription'} />}
-      <FormSumup quantity={cartData.quantity} changeQuantity={changeQuantity} price={cartData.price} />
+      {(cartData.category === 'baby cakes' || cartData.category === 'communion cakes') && <Input value={cartData.inscription} changeValue={addInscription} name={'Inscription'} />}
+      <Textarea name={'Product comments'} value={cartData.comments} changeValue={addComments} />
+      <FormSumup quantity={cartData.quantity} changeQuantity={changeQuantity} price={cartData.totalPrice} />
     </form>
   );
 };

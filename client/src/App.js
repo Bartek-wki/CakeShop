@@ -8,6 +8,8 @@ import Pastries from './components/features/Pastries/Pastries';
 import About from './components/pages/About/About';
 import SingleProduct from './components/features/SingleProduct/SingleProduct';
 import Cart from './components/features/Cart/Cart';
+import Order from './components/features/Order/Order';
+import OrderResponse from './components/features/OrderResponse/OrderResponse';
 import NotFound from './components/pages/NotFound/NotFound';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path='/pastries' element={<Pastries />} />
         <Route path='/about' element={<About />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/order' element={<Order />} />
+        <Route path='/order/response' element={<OrderResponse />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
     </MainLayout>

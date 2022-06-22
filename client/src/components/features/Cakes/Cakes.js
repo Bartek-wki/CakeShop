@@ -9,6 +9,10 @@ const Cakes = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     dispatch(loadAllCakesRequest());
   }, [dispatch]);
 

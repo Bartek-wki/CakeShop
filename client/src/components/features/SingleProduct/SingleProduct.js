@@ -9,6 +9,7 @@ import SingleProductPage from '../../pages/SingleProductPage/SingleProductPage';
 
 
 const SingleProduct = () => {
+
   const { id, product } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -41,12 +42,14 @@ const SingleProduct = () => {
         category: productData.category,
         taste: productData.taste,
         price: productData.basePrice,
+        totalPrice: productData.basePrice,
         image: productData.images[0],
         size: '',
         quantity: 1,
         productColor: 'As shown',
         decorationColor: 'As shown',
         inscription: '',
+        comments: '',
       });
     }
   },[productData, product]);
