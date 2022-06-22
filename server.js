@@ -36,14 +36,14 @@ app.use('*', (req, res) => {
 
 /* MONGOOSE */
 // connects our backend code with the database
-const NODE_ENV = process.env.NODE_ENV;
+/*const NODE_ENV = process.env.NODE_ENV;
 let dbUri = '';
 const password = process.env.password;
 
 if(NODE_ENV === 'production') dbUri = 'mongodb+srv://Bartek-wki:' + password + '@cluster0.qoovd.mongodb.net/CakeShopDB?retryWrites=true&w=majority';
-else dbUri = 'mongodb://localhost:27017/CakeShop';
+else dbUri = 'mongodb://localhost:27017/CakeShop';*/
 
-mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://Bartek-wki:badaw352@cluster0.qoovd.mongodb.net/CakeShopDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.once('open', () => {
