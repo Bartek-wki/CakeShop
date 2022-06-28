@@ -1,4 +1,4 @@
-# Bakary website
+# Cake shop website
 
 ## Link to published website:
 
