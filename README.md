@@ -34,8 +34,8 @@ The backend of the application plays the role of:
 
 The backend API allows for:
 
-- Get basic information about all products,
-- Get all information about a single product,
+- get basic information about all products,
+- get all information about a single product,
 - save your order.
 
 ## O projekcie (polski)
