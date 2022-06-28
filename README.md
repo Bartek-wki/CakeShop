@@ -14,9 +14,9 @@ All the source files you need to work with are located in the `src` and `public`
 
 ## About project (english)
 
-The website of a cake shop. The frontend consists of the main page, subpages with the list of products of a given category, subpage of a single product, cart and order form.
+The website of a cake shop. The front end consists of the main page, subpages with the list of products of a given category, subpage of a single product, cart and order form.
 
-The frontend of the application uses:
+The front end of the application uses:
 
 - React-Router for switching between pages,
 - SCSS modules for component styles,
@@ -24,15 +24,15 @@ The frontend of the application uses:
 - Redux-Thunk to handle communication with the application backend API,
 - Axios to query the API.
 
-Express, MongoDB and Mongoose were used to create the backend.
+Express, MongoDB and Mongoose were used to create the back end.
 
-The backend of the application plays the role of:
+The back end of the application plays the role of:
 
 - static file server to serve the frontend,
 - API for frontend-backend communication,
 - performing database operations.
 
-The backend API allows for:
+The back end API allows for:
 
 - get basic information about all products,
 - get all information about a single product,
@@ -40,7 +40,7 @@ The backend API allows for:
 
 ## O projekcie (polski)
 
-Strona internetowa cukierni. Frontend składa się ze strony głównej, podstron z listą produktów danej kategorii, podstrony pojedynczego produktu, koszyka oraz formularza zamówienia.
+Strona internetowa cukierni. Front end składa się ze strony głównej, podstron z listą produktów danej kategorii, podstrony pojedynczego produktu, koszyka oraz formularza zamówienia.
 
 Część frontendowa aplikacji wykorzystuje:
 
@@ -52,7 +52,7 @@ Część frontendowa aplikacji wykorzystuje:
 
 Do stworzenia backendu wykorzystano Express, MongoDB oraz Mongoose.
 
-Backend aplikacji pełni rolę:
+Back end aplikacji pełni rolę:
 
 - serwera plików statycznych do serwowania frontendu,
 - API do komunikacji frontendu z backendem,
